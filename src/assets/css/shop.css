@@ -1,0 +1,17 @@
+.shop-heading{
+    text-align: center;
+    transition: 2s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+}
+
+.shop-heading:hover{
+    text-align: center;
+    transition: 2s ease-in-out;
+    letter-spacing: 22px;
+}
+
+.filer-nav-links:hover {
+    background-color: black !important;
+    color: white !important;
+}

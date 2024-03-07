@@ -1,0 +1,37 @@
+.line {
+    width: 100%;
+    height: 2.0px;
+    background: linear-gradient(to right, black 20%, grey 40%);
+}
+
+.input-field {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid #000;
+    border-radius: 0px;
+    animation: grow-border 0.5s ease-in;
+}
+
+@keyframes grow-border {
+    0% {
+        border-bottom-width: 0px;
+    }
+
+    100% {
+        border-bottom-width: 2px;
+    }
+}
+
+.register-link, .forgot-password-link {
+    text-align: start;
+    font-size: 16px;
+    margin-top: 15px;
+    
+  }

@@ -1,0 +1,22 @@
+
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc;
+    color: #666;
+}
+
+
+.checkout-heading{
+    text-align: center;
+    transition: 2s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+}
+
+.checkout-heading:hover{
+    text-align: center;
+    transition: 2s ease-in-out;
+    letter-spacing: 22px;
+}

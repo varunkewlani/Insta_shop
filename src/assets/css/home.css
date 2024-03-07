@@ -1,0 +1,146 @@
+/* Banner */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner_stl {
+  /* background: linear-gradient(to bottom right, #ff4719 0%, #ff9900 67%); */
+  background: linear-gradient(to top right, #000000 0%, #4d4855 100%);
+  animation: slideIn 1s ease-in-out backwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Newest Arrivals Tabs */
+.nav-tabs .active {
+  border: hidden !important;
+  border-bottom: 1px solid black !important;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: red !important;
+}
+
+.nav-tabs :hover,
+.nav-tabs:focus {
+  border: hidden !important;
+  border-bottom: 1px solid white !important;
+}
+
+
+.product_details:hover {
+  letter-spacing: 1px;
+  background-color: white;
+  text-decoration: underline;
+  transition: all 0.5s ease;
+}
+
+/* PhotoCard */
+
+.photocard_text {
+  position: absolute;
+  margin-left: 0 auto;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  text-align: center;
+}
+
+/* Advertisement_color */
+
+.advertisement_color {
+  background-color: rgb(252, 244, 234);
+  width: 100%;
+}
+
+.col-md-6 {
+  padding: 1rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.surity-card-hover:hover {
+  background: linear-gradient(to top right, #000000 0%, #4d4855 100%);
+  transition: 0.5s ease-in-out 100ms;
+  color: white;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+
+.surity-card-hover {
+  transition: background 0.5s ease-out 100ms
+}
+
+
+/* Photo Cards */
+.img-photo-cards{
+  transition: 0.5s ease-in-out;
+}
+  
+
+.img-photo-cards:hover{
+border-radius: 2rem;
+transition: 0.7s ease-in-out;
+}
+
+.text-photo-cards{
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.7s ease-in-out;
+}
+
+.text-photo-cards:hover{
+  font-size: 2rem;
+  font-weight: bold; 
+  transition: 0.7s ease-in-out;
+  color: white;
+  letter-spacing: 8px;
+  box-shadow: 1px 1px;
+}
+
+.insta_username::selection{
+  color: #000000 !important;
+}
+
+.blog_cards {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.4s ease-in, padding 0.4s ease-in;
+}
+
+.blog_cards:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.7rem; 
+  letter-spacing: 1.5px;
+}

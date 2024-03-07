@@ -1,0 +1,11 @@
+
+.admin-nav-items:focus{
+    color: #ff6600 !important;
+    font-weight: bold;
+}
+
+.admin-nav-items:hover{
+    background: linear-gradient(to bottom right, #fff5ee 0%, #f8f3ec 67%);
+    font-weight: bold;
+    padding: 0.6rem;
+}
