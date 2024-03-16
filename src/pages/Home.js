@@ -205,7 +205,7 @@ const FilterProducts = ({ photocardsection }) => {
                           <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
                           <div className='product_details'>
                             <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'>{p.price}</p>
+                            <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
                           </div>
                         </Link>
                       )
@@ -229,7 +229,7 @@ const FilterProducts = ({ photocardsection }) => {
                           <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
                           <div className='product_details'>
                             <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'>{p.price}</p>
+                            <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
                           </div>
                         </Link>
                       )
@@ -253,7 +253,7 @@ const FilterProducts = ({ photocardsection }) => {
                           <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
                           <div className='product_details'>
                             <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'>{p.price}</p>
+                            <p className='px-1 text-dark fw-bold'> ₹ {p.price}</p>
                           </div>
                         </Link>
                       )

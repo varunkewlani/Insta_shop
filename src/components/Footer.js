@@ -9,7 +9,7 @@ export const Footer = () => {
                 <div className="container">
                     <div className="row justify-content-center mx-0">
                         <div className="col-md-4">
-                            <h5 className="mb-3 h3 p-2">Swatch App</h5>
+                            <h5 className="mb-3 h3 p-2 fw-bold text-">Blazzer.com</h5>
                             <p className='small text-secondary mx-2'>We're the world's leading provider of Minion-related products and services.</p>
                         </div>
                         <div className="col-md-2">

@@ -13,7 +13,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-white shadow navanime">
                 <div className="container-fluid">
-                    <Link to="/" className="navbar-brand brandtag mx-3">SWATCH</Link>
+                    <Link to="/" className="navbar-brand brandtag mx-3">Blazzer.com</Link>
 
                     <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
