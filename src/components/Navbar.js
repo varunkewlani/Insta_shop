@@ -36,12 +36,10 @@ const Navbar = () => {
                             <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/checkout" aria-current="page">Checkout</NavLink>
                             </li>
-                            <li className="nav-item mx-auto my-1 px-3">
+                            {/* <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/youtube" aria-current="page">Youtube</NavLink>
-                            </li>
-                            <li className="nav-item mx-auto my-1 px-3">
-                                <NavLink className="text-dark text-decoration-none" to="/orders" aria-current="page">Orders</NavLink>
-                            </li>
+                            </li> */}
+                           
                             <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/login" aria-current="page">Login</NavLink>
                             </li>

@@ -182,7 +182,7 @@ const FilterProducts = ({ photocardsection }) => {
         <nav className='position-relative mt-5 container'>
           <div className="nav nav-tabs border-0 d-flex justify-content-center pt-3" id="nav-tab" role="tablist">
 
-            <button className="nav-link  text-dark filter-tab active fs-6 m-3" onClick={() => handleClick("Jeans")} id="nav-newest-tab" data-bs-toggle="tab" data-bs-target="#nav-newest" type="button" role="tab" aria-controls="nav-newest" aria-selected="true">Jeans</button>
+            <button className="nav-link  text-dark filter-tab fs-6 m-3" onClick={() => handleClick("Jeans")} id="nav-newest-tab" data-bs-toggle="tab" data-bs-target="#nav-newest" type="button" role="tab" aria-controls="nav-newest" aria-selected="true">Jeans</button>
 
             <button className="nav-link text-dark filter-tab fs-6 m-3" onClick={() => handleClick("T-Shirt")} id="nav-best-tab" data-bs-toggle="tab" data-bs-target="#nav-best" type="button" role="tab" aria-controls="nav-best" aria-selected="false">T-Shirt</button>
 
