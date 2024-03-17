@@ -8,6 +8,7 @@ export const SingleProduct = () => {
     const params = useParams()
     const [data, setData] = useState([])
     const [commentslist, setCommentList] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const url = `http://localhost:8000/product/` + params.id
     const urlList = `http://localhost:8000/product`
@@ -15,29 +16,64 @@ export const SingleProduct = () => {
     const carturl = "http://localhost:8000/cart"
 
     useEffect(() => {
-        axios.get(url).then((res) => setData(res.data)).catch((e) => console.log(e))
-        axios.get(commenturl).then((res) => setCommentList(res.data)).catch((e) => console.log(e))
+
+        setLoading(true)
+        setTimeout(() => {
+            axios.get(url).then((res) => {
+                setData(res.data)
+                setLoading(false)
+            }).catch((e) => console.log(e))
+        }, 1000);
+
+        axios.get(commenturl).then((res) => {
+            setCommentList(res.data)
+        }).catch((e) => console.log(e))
     }, [data.length])
 
     return (
         <>
-            <div className='container'>
-                <div className='row my-5'>
-                    <div className='col-md-6'>
-                        <LeftSide data={data.img} />
+            {loading ?
+                    <div className="loading-spinner py-5 my-5">
+                        <div class="spinner-grow text-primary mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-dark mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
-                    <div className='col-md-6'>
-                        <RightSide data={data} carturl={carturl} />
+                    :
+                    <div className='container'>
+                    <div className='row my-5'>
+                        <div className='col-md-6'>
+                            <LeftSide data={data.img} />
+                        </div>
+                        <div className='col-md-6'>
+                            <RightSide data={data} carturl={carturl} />
+                        </div>
                     </div>
+                    <ProductReview commentslist={commentslist} commenturl={commenturl} />
+
+                    <br />
+                    <h2 className="single_category-heading my-5">Related Product</h2>
+
+                    <RelatedProduct url={urlList} brands={data.brand} />
                 </div>
-
-                <ProductReview commentslist={commentslist} commenturl={commenturl} />
-
-                <br />
-                <h2 className="single_category-heading my-5">Related Product</h2>
-
-                <RelatedProduct url={urlList} brands={data.brand} />
-            </div>
+            }
         </>
     )
 }
@@ -195,7 +231,7 @@ const RightSide = ({ data, carturl }) => {
         cartListapi()
     }, [])
 
-    const addcart = (carturl,cartData) => {
+    const addcart = (carturl, cartData) => {
         axios.post(carturl, cartData).then((res) => {
             console.log(res.data);
             navigate("/cart")
@@ -204,7 +240,7 @@ const RightSide = ({ data, carturl }) => {
 
     const handleToCart = () => {
         console.log(cartList);
-    
+
         if (cartList !== undefined && cartList.length > 0) {
             let isAlreadyInCart = false;
 
@@ -214,7 +250,7 @@ const RightSide = ({ data, carturl }) => {
                     isAlreadyInCart = true;
                 }
             });
-    
+
             if (!isAlreadyInCart) {
                 console.log(cartData, "pppppppp");
                 addcart(carturl, cartData);

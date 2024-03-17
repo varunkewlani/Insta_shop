@@ -157,7 +157,6 @@ const FilterProducts = ({ photocardsection }) => {
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
-    handleClick("Jeans")
     getCategory().then((res) => setData(res.data)).catch((err) => console.log(err))
   }, [])
 
@@ -193,7 +192,7 @@ const FilterProducts = ({ photocardsection }) => {
 
         <div className="tab-content" id="nav-tabContent">
           {/* Newest Arrivals */}
-          <div className="tab-pane fade show active" id="nav-newest" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+          <div className="tab-pane fade show" id="nav-newest" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
             <div className="card border-0">
               <div className="card-body">
                 <div className="row">

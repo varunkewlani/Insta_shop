@@ -22,7 +22,7 @@ export const Cart = () => {
 
   return (
     <div className='container'>
-      <h2 className="hr-lines my-5 cart-heading">SHOPPING CART </h2>
+      <h2 className="hr-lines my-5 cart-heading text-center">SHOPPING CART </h2>
       <div className='row py-5'>
         <CartItems cartData={cartList} cartListapi={cartListapi} />
         <OrderSummary cartData={cartList} />
