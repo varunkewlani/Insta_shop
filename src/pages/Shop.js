@@ -6,10 +6,19 @@ import axios from 'axios'
 export const Shop = () => {
 
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+
     const url = `${process.env.REACT_APP_API_URL}/product`
 
     useEffect(() => {
-        axios.get(url).then((res) => setData(res.data)).catch((e) => console.log(e))
+        setLoading(true)
+       
+       setTimeout(() => {        
+           axios.get(url).then((res) => {
+               setData(res.data)
+               setLoading(false)
+           }).catch((e) => console.log(e))
+       }, 1000);
     }, [data.length])
 
     return (
@@ -21,9 +30,36 @@ export const Shop = () => {
                     <Leftbar data={data} />
                 </div>
                 <div className='col-lg-1'></div>
-                <div className='col-lg-9 col-md-12 col-sm-12 my-2'>
-                    <Rightbar data={data} />
+                { loading ? 
+
+                <div className="loading-spinner col-lg-6 col-md-12 col-sm-12 my-2">
+                    <div class="spinner-grow text-primary mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-secondary mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-success mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-danger mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-warning mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-info mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-dark mx-2" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </div>
+                :
+                <div className='col-lg-9 col-md-12 col-sm-12 my-2'>
+                <Rightbar data={data} />
+                </div>
+            }   
             </div>
 
         </React.Fragment>

@@ -15,7 +15,6 @@
 
   .emptycart-centered-text {
     letter-spacing: 0.3rem; 
-    
     animation: slideIn 1s ease-in-out forwards;
   }
   
