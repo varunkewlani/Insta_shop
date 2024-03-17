@@ -12,7 +12,6 @@ export const Shop = () => {
 
     useEffect(() => {
         setLoading(true)
-       
        setTimeout(() => {        
            axios.get(url).then((res) => {
                setData(res.data)

@@ -64,21 +64,19 @@ export const Categories = () => {
 
 const CategoriesItems = ({ category, index }) => {
     const img = [
+        "https://cdn.media.amplience.net/i/truworths/prod3088983_2?fmt=auto&$pdp-main-mobile$",
         "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-3.jpg",
-        "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-3.jpg",
-        "https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/shop-single-3.jpg"
+        "https://heaon-store-demo.myshopify.com/cdn/shop/products/16.1.jpg?v=1679539854"
     ]
 
     return (
         <>
             <div className='col-lg-3 px-1 col-md-4 my-3 cat-card'>
                 <div className='position-relative'>
+                    <img src={img[index]} alt="categoryimage" className='w-100 my-3' style={{height:"18rem"}} />
                     <div className='position-absolute bottom-0 m-2 fs-3 fw-normal text-dark cat-text'>{category}</div>
-                    <img src={img[index]} alt="categoryimage" className='w-100 h-100 my-3' />
                 </div>
             </div>
-
-
         </>
     )
 }

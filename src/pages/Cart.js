@@ -81,7 +81,7 @@ const CartItems = ({ cartData, cartListapi }) => {
             <hr />
           </div>
         )
-      }) : <div class="emptycart-centered-text fs-3 fw-bold text-secondary">Empty Cart</div>
+      }) : <div class="emptycart-centered-text fs-3 fw-bold text-secondary container">Empty Cart</div>
       }
     </div>
   )
