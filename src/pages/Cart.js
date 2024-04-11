@@ -7,7 +7,7 @@ import axios from 'axios'
 export const Cart = () => {
 
   const [cartList, setCartList] = useState([])
-  const carturl = "http://localhost:8000/cart"
+  const carturl = `${process.env.REACT_APP_API_URL}/cart`
 
   const cartListapi = () => {
     axios.get(carturl).then((res) => {
@@ -33,7 +33,7 @@ export const Cart = () => {
 
 const CartItems = ({ cartData, cartListapi }) => {
 
-  const quantityurl = "http://localhost:8000/cart"
+  const quantityurl = `${process.env.REACT_APP_API_URL}/cart`
 
   const handleCartDelete = (id) => {
     console.log(id, "mmmmmmmmmmmmmm");

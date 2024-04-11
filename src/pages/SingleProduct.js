@@ -10,10 +10,10 @@ export const SingleProduct = () => {
     const [commentslist, setCommentList] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const url = `http://localhost:8000/product/` + params.id
-    const urlList = `http://localhost:8000/product`
-    const commenturl = "http://localhost:8000/comment"
-    const carturl = "http://localhost:8000/cart"
+    const url = `${process.env.REACT_APP_API_URL}/product/` + params.id
+    const urlList = `${process.env.REACT_APP_API_URL}/product`
+    const commenturl = `${process.env.REACT_APP_API_URL}/comment`
+    const carturl = `${process.env.REACT_APP_API_URL}/cart`
 
     useEffect(() => {
 

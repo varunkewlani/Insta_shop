@@ -1,9 +1,9 @@
 import axios from "axios"
 
 export const createUser = async (data) => {
-    return await axios.post('http://192.168.10.242:8000/register/', data)
+    return await axios.post(`${process.env.REACT_APP_API_URL}/register/`, data)
 }
 
 export const checkUser = async (data) => {
-    return await axios.post('http://192.168.10.242:8000/login/', data)
+    return await axios.post(`${process.env.REACT_APP_API_URL}/login/`, data)
 }

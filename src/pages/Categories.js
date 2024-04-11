@@ -7,7 +7,7 @@ export const Categories = () => {
     const [categories, setCategories] = useState([])
     const [uniqueCategory, setUniqueCategory] = useState([])
     const [loading, setLoading] = useState(false)
-    const url = "http://localhost:8000/product"
+    const url = `${process.env.REACT_APP_API_URL}/product`
 
     useEffect(() => {
         setLoading(true)

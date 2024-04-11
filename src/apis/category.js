@@ -1,27 +1,13 @@
 import axios from "axios"
 
-// export const createCategory = async(category) => {
-//     return await axios.post('http://192.168.10.242:8000/slug/', category)
-// }
-
-// export const getCategory = async() => {
-//     return await axios.get('http://192.168.10.242:8000/slug/')
-// }
-
-// export const updateCategory = async(category) => {
-//     return await axios.put(`http://192.168.10.242:8000/slug/${'id'}`, category)
-// }
-
 export const createCategory = async (category) => {
-    return await axios.post('http://localhost:8000/category', category)
+    return await axios.post(`${process.env.REACT_APP_API_URL}/category`, category)
 }
 
 export const getCategory = async () => {
-    return await axios.get('http://localhost:8000/product')
+    return await axios.get(`${process.env.REACT_APP_API_URL}/product`)
 }
 
 export const updateCategory = async(params,data) => {
-    console.log(4444444,params.slug,data,"lllddddddddddddddddd");
-    return await axios.put(`http://localhost:8000/category/${params.slug}`, data)
+    return await axios.put(`${process.env.REACT_APP_API_URL}/category/${params.slug}`, data)
 }
-
