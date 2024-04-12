@@ -40,18 +40,20 @@
 
 
 /* Newest Arrivals Tabs */
-.nav-tabs .active {
+.nav-tab .nav-link .active {
   border: hidden !important;
-  border-bottom: 1px solid black !important;
+  border-bottom: 5px solid #2196F3 !important;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  color: red !important;
+  color: #2196F3 !important;
 }
 
-.nav-tabs :hover,
-.nav-tabs:focus {
+.nav-tab :hover,
+.nav-link:focus {
   border: hidden !important;
-  border-bottom: 1px solid white !important;
+  font-weight: bold;
+  transition: 1s;
+  color: #2196F3 !important;
 }
 
 
@@ -76,7 +78,7 @@
 /* Advertisement_color */
 
 .advertisement_color {
-  background-color: rgb(252, 244, 234);
+  background-color: #94D8FF;
   width: 100%;
 }
 
@@ -125,7 +127,6 @@ transition: 0.7s ease-in-out;
   font-weight: bold; 
   transition: 0.7s ease-in-out;
   color: white;
-  letter-spacing: 8px;
   box-shadow: 1px 1px;
 }
 
@@ -136,11 +137,33 @@ transition: 0.7s ease-in-out;
 .blog_cards {
   border-radius: 1rem;
   padding: 1.5rem;
-  transition: box-shadow 0.4s ease-in, padding 0.4s ease-in;
+  transition: box-shadow 0.5s ease-in, padding 0.4s ease-in;
 }
 
 .blog_cards:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1.7rem; 
-  letter-spacing: 1.5px;
+}
+
+.button {
+  animation: fadeIn 500ms ease-out backwards;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.carousel-control-prev:hover{
+background-color: #94D8FF !important;
+}
+
+.carousel-control-next:hover{
+  background-color: #94D8FF !important;
 }

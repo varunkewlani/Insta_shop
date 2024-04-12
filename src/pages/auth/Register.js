@@ -179,10 +179,12 @@ export const Register = () => {
                   Sign Up
                 </button>
               </div>
+              <div className='mt-2'>
 
-              <p className="register-link">
-                Already have an account? <Link to="/login">Login here</Link>.
-              </p>
+              <Link to="/login" className="register-link text-decoration-none">
+                Already Have an account? <span className='fw-normal text-decoration-underline my-3'> Login here</span>.
+              </Link>
+              </div>
             </div>
           </div>
         </div>

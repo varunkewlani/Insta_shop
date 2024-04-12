@@ -29,9 +29,9 @@
     }
 }
 
-.register-link, .forgot-password-link {
+.register-link,.login-link, .forgot-password-link {
     text-align: start;
     font-size: 16px;
     margin-top: 15px;
-    
+    color: #2196F3;
   }

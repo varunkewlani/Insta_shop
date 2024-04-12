@@ -13,7 +13,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-white shadow navanime">
                 <div className="container-fluid">
-                    <Link to="/" className="navbar-brand brandtag mx-3">Blazzer.com</Link>
+                    <Link to="/" className="navbar-brand brandtag mx-3"> Insta Shop  </Link>
 
                     <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -33,9 +33,9 @@ const Navbar = () => {
                             <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/cart" aria-current="page">Cart</NavLink>
                             </li>
-                            <li className="nav-item mx-auto my-1 px-3">
+                            {/* <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/checkout" aria-current="page">Checkout</NavLink>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item mx-auto my-1 px-3">
                                 <NavLink className="text-dark text-decoration-none" to="/youtube" aria-current="page">Youtube</NavLink>
                             </li> */}

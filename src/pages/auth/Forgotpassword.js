@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 export const Forgotpassword = () => {
-  
+
   const [email, setEmail] = useState('');
 
-  
+
 
   return (
     <React.Fragment>
@@ -37,9 +37,11 @@ export const Forgotpassword = () => {
                 </button>
               </div>
 
-              <p className="register-link">
-                Remeber Your Password ? <Link to="/login">Sign in</Link>.
-              </p>
+              <div className='mt-2'>
+                <Link to="/register" className="register-link text-decoration-none">
+                  Remeber Your Password ?<span className='fw-normal text-decoration-underline'> Sign in here</span>.
+                </Link>
+              </div>
 
             </div>
           </div>

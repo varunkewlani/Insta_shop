@@ -5,8 +5,6 @@ import logo from "../assets/image/man.png"
 import Img1 from "../assets/image/img1.webp"
 import Img2 from "../assets/image/img2.webp"
 import Img3 from "../assets/image/img4.webp"
-import Img4 from "../assets/image/Imgfilter1.webp"
-import axios from 'axios'
 import { getCategory } from '../apis/category'
 
 const Home = () => {
@@ -40,7 +38,7 @@ const Home = () => {
 }
 
 const Banner = ({ section1Ref }) => {
- 
+
   const handleClick = () => {
     section1Ref.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -52,8 +50,8 @@ const Banner = ({ section1Ref }) => {
           <div className="col-md-6 order-md-1 order-2 d-flex align-items-center">
             <div className="d-grid">
               <div className="h1 text-center text-white fw-bold">MAN </div>
-              <div className="fs-3 text-center text-white">Formal Blezzers</div>
-              <div className="fs-3 text-center text-white">i Am lucky for using your website</div>
+              <div className="fs-3 text-center text-white">Formal <span className='fw-bold'> CLOTHS </span> </div>
+              <div className="fs-3 text-center text-white">Purchase Any Cloths Within  <span className='fw-bold'>Discounts %70</span> </div>
               <div className="banner_btn my-3 text-center">
                 <Link to="/" onClick={() => handleClick()} className="fs-5 p-2 text-center btn btn-outline-light rounded-3">Get Started</Link>
               </div>
@@ -77,8 +75,8 @@ const SurityCards = ({ section1Ref }) => {
           <div className="card border-0 rounded-3 shadow p-3 surity-card-hover" style={{ height: "14.5rem" }}>
             <div className="card-body">
               <div className='fw-bold text-center my-2 py-2'> <i className="fs-5 fa-solid fa-arrow-right-arrow-left"></i> </div>
-              <h5 className="card-title text-center h5 py-2">30 DAYS RETURN</h5>
-              <p className="card-text text-center fs-6 py-2">Simply return it within 30 days for an exchange.</p>
+              <h5 className="card-title text-center h5 py-2"><span className='fw-bold'> 7 DAYS</span>   RETURN</h5>
+              <p className="card-text text-center fs-6 py-2">Simply return it within 7 days for an exchange.</p>
             </div>
           </div>
         </div>
@@ -86,7 +84,7 @@ const SurityCards = ({ section1Ref }) => {
           <div className="card border-0 rounded-3 shadow p-3 surity-card-hover" style={{ height: "14.5rem" }}>
             <div className="card-body">
               <div className='fw-bold text-center my-2 py-2'> <i className="fs-5 fa-solid fa-truck-fast"></i> </div>
-              <h5 className="card-title text-center h5 py-2">FREE US DELIVERY</h5>
+              <h5 className="card-title text-center h5 py-2">FREE US DELIVERY </h5>
               <p className="card-text text-center fs-6 py-2">On orders over $200! Hey Do you wanna try</p>
             </div>
           </div>
@@ -95,7 +93,7 @@ const SurityCards = ({ section1Ref }) => {
           <div className="card border-0 rounded-3 shadow p-3 surity-card-hover" style={{ height: "14.5rem" }}>
             <div className="card-body">
               <div className='fw-bold text-center my-2 py-2'> <i className="fs-5 fa-solid fa-phone"></i> </div>
-              <h5 className="card-title text-center h5 py-2">SUPPORT 24/7</h5>
+              <h5 className="card-title text-center h5 py-2">SUPPORT <span className='fw-bold'>24/7 </span></h5>
               <p className="card-text text-center fs-6 py-2">Contact us 24 hours a day, 7 days a week</p>
             </div>
           </div>
@@ -155,6 +153,8 @@ const FilterProducts = ({ photocardsection }) => {
 
   const [data, setData] = useState([]);
   const [products, setProduct] = useState([]);
+  const [activeTab, setActiveTab] = useState("Jeans")
+  const [showBtn, setshowBtn] = useState(true)
 
   useEffect(() => {
     getCategory().then((res) => setData(res.data)).catch((err) => console.log(err))
@@ -162,14 +162,16 @@ const FilterProducts = ({ photocardsection }) => {
 
   const handleClick = (type) => {
     const matchedProducts = data.filter((d) => type === d.category);
-    if (matchedProducts.length > 0) {
-      setProduct(matchedProducts);
-    } else {
-      console.log("No products found for this category.");
-    }
+    setTimeout(() => {      
+      if (matchedProducts.length > 0) {
+        setshowBtn(false)
+        setActiveTab(type)
+        console.log(type, "555555555");
+        setProduct(matchedProducts);
+      }
+    }, 500);
   }
 
-  console.log(products, "ppp");
   return (
     <>
       <div className="container p-3" ref={photocardsection}>
@@ -177,93 +179,151 @@ const FilterProducts = ({ photocardsection }) => {
         {/* Heading  */}
         <div className='text-center pt-5 fs-2 fw-bold'>SELECT YOUR CHOICE</div>
 
-        {/* Containers Tabs */}
-        <nav className='position-relative mt-5 container'>
-          <div className="nav nav-tabs border-0 d-flex justify-content-center pt-3" id="nav-tab" role="tablist">
+        {showBtn ?
+          <div className='justify-content-center mt-5 nav-tab'>
+            <div className='row filterbtn'>
+              <div className='col-md'>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Jeans")} >Jeans</button>
+              </div>
+              <div className='col-md'>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("T-Shirt")} >T-Shirt</button>
+              </div>
+              <div className='col-md'>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Blazer")} > Blazer </button>
+              </div>
 
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border rounded-pill border-black" onClick={() => handleClick("Jeans")} id="nav-newest-tab" data-bs-toggle="tab" data-bs-target="#nav-newest" type="button" role="tab" aria-controls="nav-newest" aria-selected="true">Jeans</button>
-
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border rounded-pill border-black" onClick={() => handleClick("T-Shirt")} id="nav-best-tab" data-bs-toggle="tab" data-bs-target="#nav-best" type="button" role="tab" aria-controls="nav-best" aria-selected="false">T-Shirt</button>
-
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border rounded-pill border-black" onClick={() => handleClick("Blazer")} id="nav-onsale-tab" data-bs-toggle="tab" data-bs-target="#nav-onsale" type="button" role="tab" aria-controls="nav-onsale" aria-selected="false"> Blazer </button>
-
+            </div>
           </div>
-        </nav>
+          : <div className='d-flex justify-content-center mt-5 nav-tab'>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Jeans")} >Jeans</button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("T-Shirt")} >T Shirt</button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Blazer")} > Blazer </button>
+          </div>
+        }
 
-        <div className="tab-content" id="nav-tabContent">
-          {/* Newest Arrivals */}
-          <div className="tab-pane fade show" id="nav-newest" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-            <div className="card border-0">
-              <div className="card-body">
-                <div className="row">
-
-                  {
-                    products && products.map((p) => {
-                      return (
-                        <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
-                          <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
-                          <div className='product_details'>
-                            <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
-                          </div>
-                        </Link>
-                      )
-                    })
-                  }
-                </div>
+        {activeTab === "Jeans" ?
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="row">
+                {
+                  products && products.map((p) => {
+                    return (
+                      <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
+                        <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
+                        <div className='product_details'>
+                          <div className='fs-6 p-1 text-dark'>  {p.title} </div>
+                          <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
+          : ""
+        }
 
-
-          {/* Best Sellers */}
-          <div className="tab-pane fade" id="nav-best" role="tabpanel" aria-labelledby="nav-best-tab" tabindex="0">
-            <div className="card border-0">
-              <div className="card-body">
-                <div className="row">
-                  {
-                    products && products.map((p) => {
-                      return (
-                        <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
-                          <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
-                          <div className='product_details'>
-                            <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
-                          </div>
-                        </Link>
-                      )
-                    })
-                  }
-                </div>
+        {activeTab === "T-Shirt" ?
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="row">
+                {
+                  products && products.map((p) => {
+                    return (
+                      <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
+                        <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
+                        <div className='product_details'>
+                          <div className='fs-6 p-1 text-dark'>  {p.title} </div>
+                          <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
+          : ""
+        }
 
-
-          {/* On Sale */}
-          <div className="tab-pane fade" id="nav-onsale" role="tabpanel" aria-labelledby="nav-onsale-tab" tabindex="0">
-            <div className="card border-0">
-              <div className="card-body">
-                <div className="row">
-                  {
-                    products && products.map((p) => {
-                      return (
-                        <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
-                          <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
-                          <div className='product_details'>
-                            <div className='fs-6 p-1 text-dark'>  {p.title} </div>
-                            <p className='px-1 text-dark fw-bold'> ₹ {p.price}</p>
-                          </div>
-                        </Link>
-                      )
-                    })
-                  }
-                </div>
+        {activeTab === "Blazer" ?
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="row">
+                {
+                  products && products.map((p) => {
+                    return (
+                      <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
+                        <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
+                        <div className='product_details'>
+                          <div className='fs-6 p-1 text-dark'>  {p.title} </div>
+                          <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
+          : ""
+        }
 
+
+        {/* Newest Arrivals */}
+        {/* */}
+
+
+
+        {/* <div className="">
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="row">
+                {
+                  products && products.map((p) => {
+                    return (
+                      <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
+                        <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
+                        <div className='product_details'>
+                          <div className='fs-6 p-1 text-dark'>  {p.title} </div>
+                          <p className='px-1 text-dark fw-bold'>₹ {p.price}</p>
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Best Sellers */}
+
+        {/* On Sale */}
+        {/* <div className="">
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="row">
+                {
+                  products && products.map((p) => {
+                    return (
+                      <Link to={`/singleproduct/${p.id}/${p.category}`} className="col-xl-3 col-lg-4 my-2 col-md-6 col-sm-6 text-decoration-none">
+                        <img src={p.img[0]} className="w-100" height="360" alt="Image1" />
+                        <div className='product_details'>
+                          <div className='fs-6 p-1 text-dark'>  {p.title} </div>
+                          <p className='px-1 text-dark fw-bold'> ₹ {p.price}</p>
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+
       </div>
 
     </>
@@ -273,7 +333,7 @@ const FilterProducts = ({ photocardsection }) => {
 const Advertisement = () => {
   const [username, setusername] = useState()
   const url = "https://www.instagram.com/shubhav_22/"
-  
+
   useEffect(() => {
     const usernameRegex = /\/([^\/]+)\/$/;
     const match = url.match(usernameRegex);
@@ -290,7 +350,7 @@ const Advertisement = () => {
         <div className="row p-3">
           <div className="col-md-5 order-md-1 order-2">
             <div className='fs-2 fw-bold'>Follow us on Instagram</div>
-            <p className='my-3 fs-5 text-danger fw-bold insta_username'>{username}</p>
+            <p className='my-3 fs-5 fw-bold insta_username text-primary'>{username}</p>
             <p className='fs-6 pt-3'>Contemporary wardrobe staples and authentic style for the modern man and women. Follow us for the latest trends.</p>
             <p>Tag us and get featured @vinovatheme</p>
             <Link to={url} className="btn btn-dark mb-4">Follow</Link>

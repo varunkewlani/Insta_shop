@@ -7,21 +7,21 @@
     /* color: #ff3300 !important; */
     font-weight: bold;   
     letter-spacing: 1px;
-    border-bottom: 2px solid red !important;
+    border-bottom: 2px solid #2196F3 !important;
 }
 
 .nav-item :hover{
-    color:red !important;
+    color:#2196F3 !important;
 }
 
 .brandtag{
-color: red !important;
+color: #2196F3 !important;
 font-weight: bold;
 letter-spacing: 1px;
 }
  
 .active{
-    color: red;
+    color: #2196F3;
     text-decoration: none;
     font-weight: normal;
     /* border-bottom: #ff6600 solid 1px; */

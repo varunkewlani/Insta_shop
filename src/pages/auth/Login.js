@@ -4,16 +4,11 @@ import { Link } from 'react-router-dom';
 import { checkUser } from '../../apis/auth';
 import { useCookies } from 'react-cookie';
 
-
 export const Login = () => {
-
   const originalSet = new Set([1, 2, 3, 4, 5, 1])
+  console.log(originalSet, "yyyyyyyyyyyyy")
 
-    console.log(originalSet,"yyyyyyyyyyyyy")
-  
-
-
-  const [cookie,setCookie] = useCookies(["user"])
+  const [cookie, setCookie] = useCookies(["user"])
   const [email, setEmail] = useState('parth@gmail.com');
   const [password, setPassword] = useState('Marvelji@1');
   const [errorMessage, setErrorMessage] = useState('');
@@ -55,7 +50,7 @@ export const Login = () => {
       return;
     }
 
-    if ( !email || !password) {
+    if (!email || !password) {
       setErrorMessage('Please Fill All Fields');
     } else {
 
@@ -67,11 +62,11 @@ export const Login = () => {
       console.log(data);
 
       checkUser(data).then((res) => {
-        console.log(res,"LLLLLLL");
-        if(res.data.status===400){
-          console.log(res.data,"error");
-        }else{
-          console.log(res.data,"34534345345");
+        console.log(res, "LLLLLLL");
+        if (res.data.status === 400) {
+          console.log(res.data, "error");
+        } else {
+          console.log(res.data, "34534345345");
           setCookie("user", res.data, { path: "/" });
           // setCookie("user",res.data)
         }
@@ -101,7 +96,7 @@ export const Login = () => {
 
               <div>
 
-              {errorMessage && (
+                {errorMessage && (
                   <div className="text-danger border btn w-100 text-start rounded-0 px-3 py-2 mt-2" role="alert">
                     <span className='small'> {errorMessage}</span>
                   </div>
@@ -133,13 +128,15 @@ export const Login = () => {
                 </button>
               </div>
 
-              <p className="register-link">
-                Don't have an account? <Link to="/register">Register here</Link>.
-              </p>
+              <div className='mt-2'>
+                <Link to="/register" className="register-link text-decoration-none">
+                  Don't have an account? <span className='fw-normal text-decoration-underline'> Register here</span>.
+                </Link>
+              </div>
 
-              <p className="forgot-password-link">
-                <Link to="/forgot-password">Forgot password?</Link>
-              </p>
+              <div className="register-link">
+                <Link to="/forgot-password" className='forgot-password-link'>Forgot password?</Link>
+              </div>
             </div>
           </div>
         </div>

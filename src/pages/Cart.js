@@ -147,7 +147,7 @@ const OrderSummary = ({ cartData }) => {
         </div>
 
         <div className='d-flex justify-content-center my-3'>
-          {showbtn ? <Link to="/checkout" disabled={showbtn ? false : true} className='btn text-center btn-dark rounded-4 my-3 px-5 py-2 w-auto'>Checkout</Link> : <button to="/checkout" disabled={showbtn ? false : true} className='btn text-center btn-dark rounded-4 my-3 px-5 py-2 w-auto'>Checkout</button>}
+          {showbtn ? <Link to="/delivered" disabled={showbtn ? false : true} className='btn text-center btn-dark rounded-4 my-3 px-5 py-2 w-auto'>Checkout</Link> : <button to="/checkout" disabled={showbtn ? false : true} className='btn text-center btn-dark rounded-4 my-3 px-5 py-2 w-auto'>Checkout</button>}
 
         </div>
       </div>
