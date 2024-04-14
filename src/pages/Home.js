@@ -183,21 +183,21 @@ const FilterProducts = ({ photocardsection }) => {
           <div className='justify-content-center mt-5 nav-tab'>
             <div className='row filterbtn'>
               <div className='col-md'>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Shirt")} > Shirts </button>
+              </div>
+              <div className='col-md'>
                 <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Jeans")} >Jeans</button>
               </div>
               <div className='col-md'>
                 <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("T-Shirt")} >T-Shirt</button>
               </div>
-              <div className='col-md'>
-                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Blazer")} > Blazer </button>
-              </div>
 
             </div>
           </div>
           : <div className='d-flex justify-content-center mt-5 nav-tab'>
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Jeans")} >Jeans</button>
             <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("T-Shirt")} >T Shirt</button>
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Blazer")} > Blazer </button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Jeans")} >Jeans</button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Shirt")} > Shirts </button>
           </div>
         }
 
@@ -247,7 +247,7 @@ const FilterProducts = ({ photocardsection }) => {
           : ""
         }
 
-        {activeTab === "Blazer" ?
+        {activeTab === "Shirt" ?
           <div className="card border-0">
             <div className="card-body">
               <div className="row">
@@ -332,7 +332,7 @@ const FilterProducts = ({ photocardsection }) => {
 
 const Advertisement = () => {
   const [username, setusername] = useState()
-  const url = "https://www.instagram.com/shubhav_22/"
+  const url = "https://www.instagram.com/verma_shubhav/"
 
   useEffect(() => {
     const usernameRegex = /\/([^\/]+)\/$/;
@@ -350,10 +350,10 @@ const Advertisement = () => {
         <div className="row p-3">
           <div className="col-md-5 order-md-1 order-2">
             <div className='fs-2 fw-bold'>Follow us on Instagram</div>
-            <p className='my-3 fs-5 fw-bold insta_username text-primary'>{username}</p>
+            <p className='my-3 fs-5 fw-bold insta_username' style={{color:"brown"}}>{username}</p>
             <p className='fs-6 pt-3'>Contemporary wardrobe staples and authentic style for the modern man and women. Follow us for the latest trends.</p>
             <p>Tag us and get featured @vinovatheme</p>
-            <Link to={url} className="btn btn-dark mb-4">Follow</Link>
+            <Link to={url} style={{backgroundColor:"brown"}} className="btn btn-dark mb-4">Follow</Link>
           </div>
           <div className='col-md-1'></div>
           <div className="col-md-5 order-md-2 order-1">

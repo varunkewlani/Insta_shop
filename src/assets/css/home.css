@@ -42,10 +42,10 @@
 /* Newest Arrivals Tabs */
 .nav-tab .nav-link .active {
   border: hidden !important;
-  border-bottom: 5px solid #2196F3 !important;
+  border-bottom: 5px solid #D09683 !important;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  color: #2196F3 !important;
+  color: #D09683 !important;
 }
 
 .nav-tab :hover,
@@ -53,7 +53,7 @@
   border: hidden !important;
   font-weight: bold;
   transition: 1s;
-  color: #2196F3 !important;
+  color: #D09683 !important;
 }
 
 
@@ -78,7 +78,7 @@
 /* Advertisement_color */
 
 .advertisement_color {
-  background-color: #94D8FF;
+  background-color: #D09683;
   width: 100%;
 }
 
@@ -161,9 +161,9 @@ transition: 0.7s ease-in-out;
 }
 
 .carousel-control-prev:hover{
-background-color: #94D8FF !important;
+background-color: #D09683 !important;
 }
 
 .carousel-control-next:hover{
-  background-color: #94D8FF !important;
+  background-color: #D09683 !important;
 }
