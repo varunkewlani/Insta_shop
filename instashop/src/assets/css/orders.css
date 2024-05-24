@@ -1,0 +1,12 @@
+.order-heading{
+    text-align: center;
+    transition: 2s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+}
+
+.order-heading:hover{
+    text-align: center;
+    transition: 2s ease-in-out;
+    letter-spacing: 22px;
+}

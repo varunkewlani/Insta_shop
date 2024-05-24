@@ -1,0 +1,28 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.nav-item .active{
+    /* color: #ff3300 !important; */
+    font-weight: bold;   
+    letter-spacing: 1px;
+    border-bottom: 2px solid #D09683 !important;
+}
+
+.nav-item :hover{
+    color:#D09683 !important;
+}
+
+.brandtag{
+color: #D09683 !important;
+font-weight: bold;
+letter-spacing: 1px;
+}
+ 
+.active{
+    color: #D09683;
+    text-decoration: none;
+    font-weight: normal;
+    /* border-bottom: #ff6600 solid 1px; */
+}
