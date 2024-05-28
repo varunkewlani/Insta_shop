@@ -1,1 +1,1 @@
-# Blazzer
+# InstaShop
