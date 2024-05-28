@@ -12,12 +12,12 @@ export const Shop = () => {
 
     useEffect(() => {
         setLoading(true)
-       setTimeout(() => {        
-           axios.get(url).then((res) => {
-               setData(res.data)
-               setLoading(false)
-           }).catch((e) => console.log(e))
-       }, 1000);
+        setTimeout(() => {
+            axios.get(url).then((res) => {
+                setData(res.data)
+                setLoading(false)
+            }).catch((e) => console.log(e))
+        }, 1000);
     }, [data.length])
 
     return (
@@ -29,36 +29,36 @@ export const Shop = () => {
                     <Leftbar data={data} />
                 </div>
                 <div className='col-lg-1'></div>
-                { loading ? 
+                {loading ?
 
-                <div className="loading-spinner col-lg-6 col-md-12 col-sm-12 my-2">
-                    <div class="spinner-grow text-primary mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
+                    <div className="loading-spinner col-lg-6 col-md-12 col-sm-12 my-2">
+                        <div class="spinner-grow text-primary mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-dark mx-2" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
-                    <div class="spinner-grow text-secondary mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
+                    :
+                    <div className='col-lg-9 col-md-12 col-sm-12 my-2'>
+                        <Rightbar data={data} />
                     </div>
-                    <div class="spinner-grow text-success mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                    <div class="spinner-grow text-danger mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                    <div class="spinner-grow text-warning mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                    <div class="spinner-grow text-info mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                    <div class="spinner-grow text-dark mx-2" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-                :
-                <div className='col-lg-9 col-md-12 col-sm-12 my-2'>
-                <Rightbar data={data} />
-                </div>
-            }   
+                }
             </div>
 
         </React.Fragment>
@@ -66,10 +66,13 @@ export const Shop = () => {
 }
 
 const Leftbar = ({ data }) => {
+    const [colors, setColors] = useState(['black', 'lightgreen', 'gold', 'blue', 'red', 'lightgrey', 'pink'])
     const [fliterdisplay, setFilterdisplay] = useState(true)
+    const [selectedColors, setSelectedColors] = useState([]);
+    const isColorSelected = (color) => selectedColors.includes(color);
 
     const HandleColor = (color) => {
-        console.log(color, "color");
+        console.log(color);
     }
 
     return (
@@ -87,14 +90,13 @@ const Leftbar = ({ data }) => {
                         </Link>
 
                         <div className="d-flex flex-wrap">
-                            <button onClick={() => HandleColor('black')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "black" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('lightgreen')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "lightgreen" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('gold')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "gold" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "blue" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "red" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "ligthgrey" }} aria-current="page"></button>
-                            <button onClick={() => HandleColor('')} className="nav-link rounded-2 text-dark fs-6 p-3 m-1" style={{ backgroundColor: "pink" }} aria-current="page"></button>
+                            {colors.map((c) => {
+                                return (
+                                    <button onClick={() => HandleColor(c)} className={`nav-link rounded-2 text-dark fs-6 p-3 m-1 ${isColorSelected(c) ? 'selected' : ''}`} style={{ backgroundColor: c }} aria-current="page"></button>
+                                )
+                            })}
                         </div>
+
 
 
                     </div>

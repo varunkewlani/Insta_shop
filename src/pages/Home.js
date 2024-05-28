@@ -5,7 +5,7 @@ import logo from "../assets/image/man.png"
 import Img1 from "../assets/image/img1.webp"
 import Img2 from "../assets/image/img2.webp"
 import Img3 from "../assets/image/img4.webp"
-import { getCategory } from '../apis/category'
+import { getProducts } from '../apis/product'
 
 const Home = () => {
 
@@ -153,11 +153,11 @@ const FilterProducts = ({ photocardsection }) => {
 
   const [data, setData] = useState([]);
   const [products, setProduct] = useState([]);
-  const [activeTab, setActiveTab] = useState("Jeans")
+  const [activeTab, setActiveTab] = useState("")
   const [showBtn, setshowBtn] = useState(true)
 
   useEffect(() => {
-    getCategory().then((res) => setData(res.data)).catch((err) => console.log(err))
+    getProducts().then((res) => setData(res.data)).catch((err) => console.log(err))
   }, [])
 
   const handleClick = (type) => {
@@ -183,21 +183,21 @@ const FilterProducts = ({ photocardsection }) => {
           <div className='justify-content-center mt-5 nav-tab'>
             <div className='row filterbtn'>
               <div className='col-md'>
-                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Shirt")} > Shirts </button>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 shadow w-100 px-5 py-5" onClick={() => handleClick("Shirt")} > Shirts </button>
               </div>
               <div className='col-md'>
-                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("Jeans")} >Jeans</button>
+                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 shadow w-100 px-5 py-5" onClick={() => handleClick("Jeans")} >Jeans</button>
               </div>
               <div className='col-md'>
-                <button className="nav-link text-dark filter-tab fs-5 my-3 rounded-3 border-black border-5 border w-100 px-5 py-5" onClick={() => handleClick("T-Shirt")} >T-Shirt</button>
+                <button className="nav-link text-dark filter-tab fs-4 fw-bold my-3 rounded-3 shadow w-100 px-5 py-5" onClick={() => handleClick("T-Shirt")} >T-Shirt</button>
               </div>
 
             </div>
           </div>
           : <div className='d-flex justify-content-center mt-5 nav-tab'>
-            <button className="nav-link text-dark filter-tab fs-6 m-3 active border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("T-Shirt")} >T Shirt</button>
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Jeans")} >Jeans</button>
-            <button className="nav-link text-dark filter-tab fs-6 m-3 border border-3 rounded border-black py-2 px-3" onClick={() => handleClick("Shirt")} > Shirts </button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 active shadow rounded border-black py-2 px-4" onClick={() => handleClick("Shirt")} >Shirt</button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 shadow rounded border-black py-2 px-4" onClick={() => handleClick("Jeans")} >Jeans</button>
+            <button className="nav-link text-dark filter-tab fs-6 m-3 shadow rounded border-black py-2 px-4" onClick={() => handleClick("T-Shirt")} > T-Shirts </button>
           </div>
         }
 
@@ -329,6 +329,10 @@ const FilterProducts = ({ photocardsection }) => {
     </>
   )
 }
+
+
+
+
 
 const Advertisement = () => {
   const [username, setusername] = useState()
