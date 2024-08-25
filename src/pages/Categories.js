@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-
+  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -58,13 +58,13 @@ export const Categories = () => {
               </div>
             </div>
           ))}
-          {/* <div
-            className={`list-group-item ${!selectedCategory ? "active" : ""}`}
-            onClick={() => onCategoryClick(null)}
-            style={{ cursor: "pointer" }}
-          >
-            Remove Filters
-          </div> */}
+
+
+
+
+
+
+          
         </ul>
       </div>
     );
@@ -74,10 +74,8 @@ export const Categories = () => {
   function ProductList({ products }) {
     return (
       <div className="row">
-        
         {products.map((data) => (
-       
-       <div className='col-lg-4 col-md-6 my-3 mb-5'>
+          <div className='col-lg-4 col-md-6 my-3 mb-5'>
             <Link to={`/singleproduct/${data.id}/${data.category}`} className='card border-0 text-decoration-none'>
               <img src={data.img[0]} alt="product img" height="367" />
               <div className='small text-secondary mx-2 mt-2'>{data.brand}</div>
@@ -89,7 +87,5 @@ export const Categories = () => {
       </div>
     );
   }
-
-
 }
 
