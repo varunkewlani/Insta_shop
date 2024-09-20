@@ -42,7 +42,7 @@ export const Footer = () => {
             </footer>
             <div className="row pt-4 bg-dark text-white mx-0">
                 <div className="col-12 text-center">
-                    <p className="small copyright">&copy; 2023 Storecart Store. All rights reserved.</p>
+                    <p className="small copyright">&copy; 2024 Storecart Store(Varun Kewlani). All rights reserved.</p>
                 </div>
             </div>
 

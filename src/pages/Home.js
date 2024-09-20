@@ -336,7 +336,7 @@ const FilterProducts = ({ photocardsection }) => {
 
 const Advertisement = () => {
   const [username, setusername] = useState()
-  const url = "https://www.instagram.com/verma_shubhav/"
+  const url = "https://www.instagram.com/varunkewlani_04"
 
   useEffect(() => {
     const usernameRegex = /\/([^\/]+)\/$/;
