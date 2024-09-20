@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Insta_shop/static/css/main.54d707e0.css",
+    "main.js": "/Insta_shop/static/js/main.60b70d13.js",
+    "static/js/787.d345b5f9.chunk.js": "/Insta_shop/static/js/787.d345b5f9.chunk.js",
+    "static/media/man.png": "/Insta_shop/static/media/man.1292d8bc922f82e8441f.png",
+    "static/media/img4.webp": "/Insta_shop/static/media/img4.3ce1f98c436794d5d036.webp",
+    "static/media/img2.webp": "/Insta_shop/static/media/img2.e5a743917a361d80b2fe.webp",
+    "static/media/img1.webp": "/Insta_shop/static/media/img1.08f773143207ce678a58.webp",
+    "index.html": "/Insta_shop/index.html",
+    "main.54d707e0.css.map": "/Insta_shop/static/css/main.54d707e0.css.map",
+    "main.60b70d13.js.map": "/Insta_shop/static/js/main.60b70d13.js.map",
+    "787.d345b5f9.chunk.js.map": "/Insta_shop/static/js/787.d345b5f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54d707e0.css",
+    "static/js/main.60b70d13.js"
+  ]
+}
